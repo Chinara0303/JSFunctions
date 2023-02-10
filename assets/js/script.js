@@ -36,11 +36,11 @@
 
 //     nums[index] = element * 2;
 
-    // if (element % 2 == 1) {
-    //     // console.log(element);
-    //     // console.log(index);
-    //     // console.log(arr);
-    // }
+// if (element % 2 == 1) {
+//     // console.log(element);
+//     // console.log(index);
+//     // console.log(arr);
+// }
 // });
 // console.log(nums);
 
@@ -181,3 +181,86 @@
 //  let numbers = [1,3,5,7,2,4,6,10];
 //  let filterednumbers = numbers.reduce((total,current)=>total+current)
 //  console.log(filterednumbers);
+
+
+
+
+
+//tasks
+
+//2) Ededin faktorialinin hesablanmasini recursive function ile yazin.
+
+function getFactorialWithRecursiveFunction(num) {
+    if (num != 1) {
+        return num * getFactorialWithRecursiveFunction(num - 1)
+    }
+    else {
+        return num;
+    }
+}
+//console.log(getFactorialWithRecursiveFunction(5));
+
+//3) Icerisinde name, surname, age, email olan bir nece student objectleriniz var.
+// Ashagida elave etdiklerimi functionlar sekilinde yazin, functionlar objectlerden ibaret array qebul edecek.
+let stu1 = {
+    name: 'Chinara',
+    surname: 'Ibadova',
+    age: 22,
+    email: "chinaraei@code.edu.az"
+}
+let stu2 = {
+    name: 'Konul',
+    surname: 'Ibrahimova',
+    age: 26,
+    email: "konulsi@code.edu.az"
+}
+let stu3 = {
+    name: 'Roya',
+    surname: 'Meherremova',
+    age: 26,
+    email: "roya@ode.edu.az"
+}
+let stu4 = {
+    name: 'Jale',
+    surname: 'Abdullayeva',
+    age: 18,
+    email: "zhala@gmail.az"
+}
+
+let students = [stu1, stu2, stu3, stu4];
+//1) Yashi 18-25 araliginda olan telebelerin sayi.
+function getStudentCountBetweenByAges(arr) {
+    let count = 0;
+    arr.forEach(element => {
+        if (element.age > 18 && element.age < 25) {
+            count++;
+        }
+    });
+    console.log(count);
+}
+// getStudentCountBetweenByAges(students);
+//2) Emailinde "c" herfi olan studentlerin sayi.
+let getStudentCountContainsLetterInEmail = arr => {
+    let count = 0;
+    arr.forEach(element => {
+        if (element.email.includes("c")) {
+            count++;
+        }
+    });
+    console.log(count);
+}
+// getStudentCountContainsLetterInEmail(students)
+//4) Gelen yasha gore hansi ilden olduqugunu gosteren function yazin.
+//Meselen 30 gelirse function geriye 1993 qaytarmalidir.
+let showHumanAge = number => {
+    const date = new Date();
+    let currentYear = date.getFullYear();
+    if (number > 0) {
+        let age = currentYear - number;
+        console.log(age);
+    }
+    else {
+        console.log("Please, enter correct format age");
+    }
+}
+// showHumanAge(6)
